@@ -57,8 +57,8 @@ public class VentanaResultados extends JFrame {
 		tableParticipantes = new JTable();
 		model = new DefaultTableModel();
 		tableParticipantes.setModel(model);
-		model.addColumn("Nombre");
-		model.addColumn("Puntaje");
+		model.addColumn("NOMBRE");
+		model.addColumn("PUNTAJE");
 
 		tableParticipantes.getColumnModel().getColumn(1).setPreferredWidth(15);
 		scrollPane.setViewportView(tableParticipantes);

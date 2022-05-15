@@ -171,13 +171,8 @@ public class VentanaJuego extends JFrame {
 	public void verificarRespuesta(int r) {
 		if (respuestas.get(r).equals(respuesta)) {
 			juego.mostrarMensaje("¡Respuesta Correcta!");
-
-			// si pasa de la categoria 3 gana 100 puntos por pregunta
-			if (categoria < 4) {
-				puntaje += 50;
-			} else {
-				puntaje += 100;
-			}
+			// por cada nivel se multiplica por 5 las ganancias
+			puntaje += (categoria * 5);
 
 			participante.setPuntaje(puntaje);
 

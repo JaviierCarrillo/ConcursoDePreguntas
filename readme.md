@@ -3,9 +3,4 @@
 
 - Proyecto creado con Eclipse IDE.
 - Las preguntas estan cargadas en varios archivos de texto en la carpeta raíz del proyecto.
-- El formato de las preguntas en los archivos de texto son:
-"Pregunta"
-"Respuesta correcta"
-"Respuesta incorrecta"
-"Respuesta incorrecta"
-"Respuesta incorrecta"
+- Los archivos necesarios para la ejecución del proyecto están en la carpeta resource.

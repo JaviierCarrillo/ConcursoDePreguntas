@@ -88,7 +88,7 @@ public class VentanaRegistro extends JFrame {
 							juego.mostrarMensaje("El participante ya se encuentra agregado");
 						}
 					} catch (NumberFormatException ex) {
-						juego.mostrarMensaje("El pin debe ser un número entero");
+						juego.mostrarMensaje("El pin debe ser numérico");
 						// ex.printStackTrace();
 					}
 				}

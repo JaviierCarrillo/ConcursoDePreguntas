@@ -54,7 +54,7 @@ public class VentanaMenu extends JFrame {
 					}
 
 				} catch (NumberFormatException ex) {
-					juego.mostrarMensaje("El pin debe ser un numero entero");
+					juego.mostrarMensaje("El pin debe ser numérico");
 				}
 
 			}

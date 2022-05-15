@@ -12,6 +12,7 @@ import com.sofka.challenge.concurso.vo.Participante;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -33,6 +34,7 @@ public class VentanaResultados extends JFrame {
 	private JButton btnSalir;
 	private JLabel lblTitulo;
 	private DefaultTableModel model;
+	private JButton btnEliminar;
 
 	/**
 	 * Create the frame.
@@ -40,7 +42,7 @@ public class VentanaResultados extends JFrame {
 	public VentanaResultados(Juego juego) {
 		this.juego = juego;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 309);
+		setBounds(100, 100, 432, 309);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,7 +71,7 @@ public class VentanaResultados extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnSalir.setBounds(309, 242, 115, 23);
+		btnSalir.setBounds(219, 242, 158, 23);
 		contentPane.add(btnSalir);
 
 		lblTitulo = new JLabel("HISTORIAL DE PARTICIPANTES");
@@ -77,6 +79,27 @@ public class VentanaResultados extends JFrame {
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setBounds(35, 11, 342, 22);
 		contentPane.add(lblTitulo);
+
+		btnEliminar = new JButton("ELIMINAR REGISTRO");
+		btnEliminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					int pin = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el PIN del jugador a borrar"));
+					Participante participante = juego.encontrarParticipante(pin);
+					if (participante != null) {
+						juego.getParticipantes().remove(participante);
+						juego.mostrarMensaje("Se borraron los datos de: " + participante.getNombre());
+						llenarTabla();
+					} else {
+						juego.mostrarMensaje("No se pudo borrar el participante");
+					}
+				} catch (NumberFormatException ex) {
+					juego.mostrarMensaje("El dato debe ser numérico");
+				}
+			}
+		});
+		btnEliminar.setBounds(35, 242, 163, 23);
+		contentPane.add(btnEliminar);
 
 		llenarTabla();
 	}

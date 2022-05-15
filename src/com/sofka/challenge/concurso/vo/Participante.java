@@ -2,6 +2,12 @@ package com.sofka.challenge.concurso.vo;
 
 import java.io.Serializable;
 
+/**
+ * Clase que administra la información de un participante
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class Participante implements Serializable {
 
 	private int idParticipante;

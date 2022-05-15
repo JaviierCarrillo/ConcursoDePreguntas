@@ -15,7 +15,7 @@ import com.sofka.challenge.concurso.vo.Participante;
 /**
  * Clase que administra toda la información del juego
  * 
- * @author javie
+ * @author JaviierCarrillo
  *
  */
 public class Juego {
@@ -36,6 +36,11 @@ public class Juego {
 		cargarArchivos();
 	}
 
+	/**
+	 * metodo que busca a un participante en la lista a través de su pin de seguridad
+	 * @param id es el pin de seguridad
+	 * @return
+	 */
 	public Participante encontrarParticipante(int id) {
 		for (Participante participante : participantes) {
 			if (participante.getIdParticipante() == id) {
@@ -45,6 +50,9 @@ public class Juego {
 		return null;
 	}
 
+	/**
+	 * metodo que guarda los datos de los participantes en un archivo .dat
+	 */
 	public void guardarArchivos() {
 		try {
 			ObjectOutputStream escribiendoArchivo = new ObjectOutputStream(
@@ -57,6 +65,9 @@ public class Juego {
 		}
 	}
 
+	/**
+	 * metodo que lee los datos de los participantes desde un archivo .dat
+	 */
 	@SuppressWarnings("unchecked")
 	public void cargarArchivos() {
 		try {
@@ -69,13 +80,19 @@ public class Juego {
 			e.printStackTrace();
 		}
 	}
-
-	public ArrayList<Participante> getParticipantes() {
-		return participantes;
-	}
-
+	
+	/**
+	 * metodo que muestra un mensaje en pantalla 
+	 * @param mensaje que se quiere mostrar
+	 */
 	public void mostrarMensaje(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje);
+	}
+	
+
+	//Getters and setters
+	public ArrayList<Participante> getParticipantes() {
+		return participantes;
 	}
 
 	public void setParticipantes(ArrayList<Participante> participantes) {

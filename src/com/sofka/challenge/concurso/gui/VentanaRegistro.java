@@ -16,6 +16,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * metodo que permite iniciar una ventana para que el usuario se registre en el
+ * juego
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class VentanaRegistro extends JFrame {
 
 	private Juego juego;

@@ -14,6 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
+/**
+ * metodo que permite iniciar una ventana para el menú principal del juego
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class VentanaMenu extends JFrame {
 
 	private JPanel contentPane;
@@ -44,7 +50,7 @@ public class VentanaMenu extends JFrame {
 						ventanaJuego.setVisible(true);
 						setVisible(false);
 					} else {
-						juego.mostrarMensaje("No estás registrado, por favor registrate primero");
+						juego.mostrarMensaje("No se encontró este jugador");
 					}
 
 				} catch (NumberFormatException ex) {
@@ -76,7 +82,7 @@ public class VentanaMenu extends JFrame {
 		});
 		btnSalir.setBounds(42, 175, 156, 23);
 		contentPane.add(btnSalir);
-		
+
 		JButton btnHistorial = new JButton("HISTORIAL");
 		btnHistorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -87,7 +93,7 @@ public class VentanaMenu extends JFrame {
 		});
 		btnHistorial.setBounds(42, 141, 156, 23);
 		contentPane.add(btnHistorial);
-		
+
 		JLabel lblTitulo = new JLabel("CONCURSO DE PREGUNTAS");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);

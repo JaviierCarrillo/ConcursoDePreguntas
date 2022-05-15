@@ -1,8 +1,5 @@
 package com.sofka.challenge.concurso.gui;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -21,6 +18,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
+/**
+ * metodo que crea una ventana donde se muestras los participantes de juego en
+ * una tabla con sus respsctivos puntajes
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class VentanaResultados extends JFrame {
 
 	private Juego juego;
@@ -43,20 +47,20 @@ public class VentanaResultados extends JFrame {
 		setLocationRelativeTo(null);
 		setUndecorated(true);
 		contentPane.setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(35, 44, 342, 187);
 		contentPane.add(scrollPane);
-		
+
 		tableParticipantes = new JTable();
 		model = new DefaultTableModel();
 		tableParticipantes.setModel(model);
 		model.addColumn("Nombre");
 		model.addColumn("Puntaje");
-		
+
 		tableParticipantes.getColumnModel().getColumn(1).setPreferredWidth(15);
 		scrollPane.setViewportView(tableParticipantes);
-		
+
 		btnSalir = new JButton("VOLVER");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,16 +71,19 @@ public class VentanaResultados extends JFrame {
 		});
 		btnSalir.setBounds(309, 242, 115, 23);
 		contentPane.add(btnSalir);
-		
+
 		lblTitulo = new JLabel("HISTORIAL DE PARTICIPANTES");
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setBounds(35, 11, 342, 22);
 		contentPane.add(lblTitulo);
-		
+
 		llenarTabla();
 	}
-	
+
+	/**
+	 * metodo que llema la tabla con los participantes registrados
+	 */
 	public void llenarTabla() {
 		ArrayList<Participante> participantes = juego.getParticipantes();
 		for (Participante participante : participantes) {

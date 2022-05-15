@@ -15,6 +15,13 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * clase que crea una ventana donde se va a cargar la información de las
+ * preguntas y respuestas
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class VentanaJuego extends JFrame {
 
 	private JPanel contentPane;
@@ -114,6 +121,11 @@ public class VentanaJuego extends JFrame {
 		cargarPregunta(categoria);
 	}
 
+	/**
+	 * metodo que carga una pregunta a la ventana según su categoría
+	 * 
+	 * @param categoria de la pregunta
+	 */
 	public void cargarPregunta(int categoria) {
 		Pregunta pregunta = null;
 
@@ -127,14 +139,17 @@ public class VentanaJuego extends JFrame {
 			pregunta = juego.getCategoria4().elegirPreguntaAlAzar();
 		} else if (categoria == 5) {
 			pregunta = juego.getCategoria5().elegirPreguntaAlAzar();
-		} else {
-			// TODO cuando llegue al final del juego
 		}
-		// respuesta = pregunta.getRespuestas().get(0);
 		cargarTextosVentana(pregunta);
 
 	}
 
+	/**
+	 * metodo que carga la información de la pregunta y sus respuestas a la interfaz
+	 * gráfica
+	 * 
+	 * @param pregunta que se va a mostrar al usuario
+	 */
 	public void cargarTextosVentana(Pregunta pregunta) {
 		lblCategoria.setText("Categoria: " + categoria);
 		lblPuntaje.setText(participante.getNombre() + " tu puntaje es: " + participante.getPuntaje());
@@ -148,6 +163,11 @@ public class VentanaJuego extends JFrame {
 		rdbtnOpc4.setText(respuestas.get(3));
 	}
 
+	/**
+	 * metodo que verifica si la respuesta elegida por el usuario es la correcta
+	 * 
+	 * @param r indice de la pregunta elegida con la que se va a verificar
+	 */
 	public void verificarRespuesta(int r) {
 		if (respuestas.get(r).equals(respuesta)) {
 			juego.mostrarMensaje("¡Respuesta Correcta!");
@@ -178,6 +198,9 @@ public class VentanaJuego extends JFrame {
 		}
 	}
 
+	/**
+	 * metodo que permite regresar al menú principal
+	 */
 	public void volverAlMenu() {
 		VentanaMenu menu = new VentanaMenu(juego);
 		menu.setVisible(true);

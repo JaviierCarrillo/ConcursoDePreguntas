@@ -2,6 +2,12 @@ package com.sofka.challenge.concurso.vo;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que guarda la estructura de una pregunta
+ * 
+ * @author JaviierCarrillo
+ *
+ */
 public class Pregunta {
 
 	private String pregunta;

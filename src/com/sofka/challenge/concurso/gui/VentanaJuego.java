@@ -132,13 +132,13 @@ public class VentanaJuego extends JFrame {
 		respuesta = pregunta.getRespuestas().get(0);
 		cargarTextosVentana(pregunta);
 		
-		
 	}
 	public void cargarTextosVentana(Pregunta pregunta) {
 		lblCategoria.setText("Categoria: " + categoria);
 		lblPuntaje.setText(participante.getNombre() + " Su puntaje es: " + participante.getPuntaje());
 		lblPregunta.setText("<html><body>"+pregunta.getPregunta()+"</body></html>");
 		respuestas = pregunta.getRespuestas();
+		respuesta = pregunta.getRespuestas().get(0);
 		Collections.shuffle(respuestas);
 		rdbtnOpc1.setText(respuestas.get(0));
 		rdbtnOpc2.setText(respuestas.get(1));
@@ -150,6 +150,7 @@ public class VentanaJuego extends JFrame {
 		if(respuestas.get(r).equals(respuesta)) {
 			juego.mostrarMensaje("¡Respuesta Correcta!");
 			
+			//si pasa de la categoria 3 gana 100 puntos por pregunta
 			if(categoria < 4) {
 				puntaje += 50;
 			}else {

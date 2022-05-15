@@ -43,10 +43,12 @@ public class VentanaJuego extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
+		setUndecorated(true);
 		contentPane.setLayout(null);
 
 		lblCategoria = new JLabel("Categoria: " + categoria);
-		lblCategoria.setBounds(10, 11, 112, 14);
+		lblCategoria.setBounds(379, 11, 112, 14);
 		contentPane.add(lblCategoria);
 
 		grupoPreguntas = new ButtonGroup();
@@ -93,7 +95,7 @@ public class VentanaJuego extends JFrame {
 				}
 			}
 		});
-		btnAceptar.setBounds(72, 249, 112, 23);
+		btnAceptar.setBounds(65, 273, 112, 23);
 		contentPane.add(btnAceptar);
 
 		JButton btnRetirada = new JButton("RETIRARSE");
@@ -103,11 +105,11 @@ public class VentanaJuego extends JFrame {
 				volverAlMenu();
 			}
 		});
-		btnRetirada.setBounds(287, 249, 112, 23);
+		btnRetirada.setBounds(314, 273, 112, 23);
 		contentPane.add(btnRetirada);
 
-		lblPuntaje = new JLabel(participante.getNombre() + " Su puntaje es: " + puntaje);
-		lblPuntaje.setBounds(287, 11, 204, 14);
+		lblPuntaje = new JLabel(participante.getNombre() + " tu puntaje es: " + puntaje);
+		lblPuntaje.setBounds(6, 11, 253, 14);
 		contentPane.add(lblPuntaje);
 		cargarPregunta(categoria);
 	}
@@ -135,7 +137,7 @@ public class VentanaJuego extends JFrame {
 
 	public void cargarTextosVentana(Pregunta pregunta) {
 		lblCategoria.setText("Categoria: " + categoria);
-		lblPuntaje.setText(participante.getNombre() + " Su puntaje es: " + participante.getPuntaje());
+		lblPuntaje.setText(participante.getNombre() + " tu puntaje es: " + participante.getPuntaje());
 		lblPregunta.setText("<html><body>" + pregunta.getPregunta() + "</body></html>");
 		respuesta = pregunta.getRespuestas().get(0);
 		respuestas = pregunta.getRespuestas();

@@ -34,6 +34,8 @@ public class VentanaRegistro extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
+		setUndecorated(true);
 		contentPane.setLayout(null);
 
 		JLabel lblTituloRegistro = new JLabel("REGISTRATE");
@@ -52,7 +54,7 @@ public class VentanaRegistro extends JFrame {
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
 
-		JLabel lblPin = new JLabel("<html><body>Elige un PIN de seguridad (solo numeros enteros)</body></html>");
+		JLabel lblPin = new JLabel("<html><body>Elige un PIN de seguridad (solo dígitos)</body></html>");
 		lblPin.setBounds(10, 140, 229, 29);
 		contentPane.add(lblPin);
 
@@ -85,7 +87,7 @@ public class VentanaRegistro extends JFrame {
 				}
 			}
 		});
-		btnGuardar.setBounds(10, 227, 119, 23);
+		btnGuardar.setBounds(10, 238, 119, 23);
 		contentPane.add(btnGuardar);
 
 		JButton btnSalir = new JButton("SALIR");
@@ -96,7 +98,7 @@ public class VentanaRegistro extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnSalir.setBounds(136, 227, 119, 23);
+		btnSalir.setBounds(152, 238, 119, 23);
 		contentPane.add(btnSalir);
 	}
 }

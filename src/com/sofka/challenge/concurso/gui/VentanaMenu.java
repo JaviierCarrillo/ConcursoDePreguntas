@@ -10,6 +10,9 @@ import com.sofka.challenge.concurso.controller.Juego;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class VentanaMenu extends JFrame {
 
@@ -22,11 +25,12 @@ public class VentanaMenu extends JFrame {
 	public VentanaMenu(Juego juego) {
 		this.juego = juego;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 250, 237);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
+		setUndecorated(true);
 		contentPane.setLayout(null);
 
 		JButton btnJugar = new JButton("JUGAR");
@@ -49,7 +53,7 @@ public class VentanaMenu extends JFrame {
 
 			}
 		});
-		btnJugar.setBounds(123, 95, 156, 23);
+		btnJugar.setBounds(42, 73, 156, 23);
 		contentPane.add(btnJugar);
 
 		JButton btnRegistro = new JButton("REGISTRARSE");
@@ -60,7 +64,7 @@ public class VentanaMenu extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnRegistro.setBounds(123, 43, 156, 23);
+		btnRegistro.setBounds(42, 107, 156, 23);
 		contentPane.add(btnRegistro);
 
 		JButton btnSalir = new JButton("SALIR DEL JUEGO");
@@ -70,7 +74,24 @@ public class VentanaMenu extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnSalir.setBounds(255, 227, 169, 23);
+		btnSalir.setBounds(42, 175, 156, 23);
 		contentPane.add(btnSalir);
+		
+		JButton btnHistorial = new JButton("HISTORIAL");
+		btnHistorial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VentanaResultados resultados = new VentanaResultados(juego);
+				resultados.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnHistorial.setBounds(42, 141, 156, 23);
+		contentPane.add(btnHistorial);
+		
+		JLabel lblTitulo = new JLabel("CONCURSO DE PREGUNTAS");
+		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setBounds(10, 11, 230, 23);
+		contentPane.add(lblTitulo);
 	}
 }

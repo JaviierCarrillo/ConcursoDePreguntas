@@ -27,7 +27,7 @@ public class VentanaRegistro extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaRegistro(Juego juego) {
-		
+
 		this.juego = juego;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 281, 300);
@@ -35,59 +35,59 @@ public class VentanaRegistro extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblTituloRegistro = new JLabel("REGISTRATE");
 		lblTituloRegistro.setForeground(Color.RED);
 		lblTituloRegistro.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblTituloRegistro.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloRegistro.setBounds(47, 28, 176, 22);
 		contentPane.add(lblTituloRegistro);
-		
+
 		JLabel lblNombre = new JLabel("Nombre: ");
 		lblNombre.setBounds(10, 61, 99, 22);
 		contentPane.add(lblNombre);
-		
+
 		textNombre = new JTextField();
 		textNombre.setBounds(10, 88, 147, 29);
 		contentPane.add(textNombre);
 		textNombre.setColumns(10);
-		
+
 		JLabel lblPin = new JLabel("<html><body>Elige un PIN de seguridad (solo numeros enteros)</body></html>");
 		lblPin.setBounds(10, 140, 229, 29);
 		contentPane.add(lblPin);
-		
+
 		textPin = new JTextField();
 		textPin.setBounds(10, 173, 147, 29);
 		contentPane.add(textPin);
 		textPin.setColumns(10);
-		
+
 		JButton btnGuardar = new JButton("GUARDAR");
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(textNombre.getText().isEmpty() || textPin.getText().isEmpty()) {
+				if (textNombre.getText().isEmpty() || textPin.getText().isEmpty()) {
 					juego.mostrarMensaje("Por favor complete los campos del formulario");
-				}else {
+				} else {
 					String nombre = textNombre.getText();
 					try {
 						int pin = Integer.parseInt(textPin.getText());
-						if(juego.encontrarParticipante(pin) == null) {
+						if (juego.encontrarParticipante(pin) == null) {
 							juego.getParticipantes().add(new Participante(pin, nombre));
 							juego.mostrarMensaje("Se agregó con éxito");
 							textNombre.setText("");
 							textPin.setText("");
-						}else {
+						} else {
 							juego.mostrarMensaje("El participante ya se encuentra agregado");
 						}
-					}catch(NumberFormatException ex) {
+					} catch (NumberFormatException ex) {
 						juego.mostrarMensaje("El pin debe ser un número entero");
-						//ex.printStackTrace();
+						// ex.printStackTrace();
 					}
 				}
 			}
 		});
 		btnGuardar.setBounds(10, 227, 119, 23);
 		contentPane.add(btnGuardar);
-		
+
 		JButton btnSalir = new JButton("SALIR");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

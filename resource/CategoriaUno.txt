@@ -23,3 +23,28 @@ Neil Armstrong
 Buzz Aldrin
 Charles Conrad
 Michael Collins
+¿Qué tipo de animal es la ballena?
+Mamífero 
+Reptíl
+Anfibio
+Ave
+¿Qué colores tiene la bandera de Colombia?
+Amarillo, azul y rojo
+Blanco, verde y rojo
+Azul, naranja y blanco
+Amarillo, verde y rojo
+¿En qué país se encuentra la Torre Eiffel?
+París, Francia
+Roma, Italia
+Bogotá, Colombia
+Barcelona, España
+¿Cuál es el color que representa la esperanza?
+Verde.
+Blanco.
+Azul.
+Morado.
+¿Cuántas patas tiene la araña?
+8
+9
+3
+5

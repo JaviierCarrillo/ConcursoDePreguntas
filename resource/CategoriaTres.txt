@@ -23,3 +23,28 @@ Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano, Neptuno
 Venus, Mercurio, Tierra, Júpiter, Urano, Saturno, Neptuno, Marte
 Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano, Neptuno, Plutón
 Venus, Luna, Tierra, Mercurio, Marte, Júpiter, Saturno, Urano, Sol
+¿Qué cantidad de huesos tiene el cuerpo humano?
+206
+203
+195
+298
+¿Quién pintó "La última cena"?
+Leonardo DaVinci
+Miguel de Cervantes
+Leonardo Dicaprio
+Alejandro Santodomingo 
+¿Cuál es el río más largo del mundo?
+Amazonas
+Nilo
+Misisipi
+Yangtsé
+¿Qué país tiene forma de bota?
+Francia
+Italia
+España
+Inglaterra
+¿Cuántos lados tiene un hexágono? 
+6
+3
+5
+8

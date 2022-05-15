@@ -13,7 +13,7 @@ Arterias
 Uréteres
 Venas
 Capilares
-¿Cuántos jugadores pueden participar por equipo en el basquetbol?
+¿Cuántos jugadores pueden participar por equipo en el basketball?
 5
 4
 8
@@ -23,3 +23,28 @@ Capilares
 4
 6
 8
+¿Cuál es el nombre de la lengua oficial en China?
+Mandarín
+Inglés
+Francés
+Aleman
+¿Quién ganó el mundial del 2014?
+Alemania
+Francia
+Brasil
+Portugal
+¿Quién escribió "Hamlet"?
+William Shakespeare
+Pablo Neruda
+Julio César 
+Gabriel Gracía Márquez
+¿Cuántos años tiene un lustro?
+5 
+7
+4
+2
+¿Cuáles son los cinco tipos de sabores primarios?
+Dulce, amargo, ácido, salado y umami
+Amargo, ácido, azucarado, umami y salado
+Dulce, salado, agrio, picante y suave
+Amargo, picante, salado, agrio y dulce

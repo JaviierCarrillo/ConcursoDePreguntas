@@ -1,31 +1,33 @@
 package com.sofka.challenge.concurso.vo;
 
-public class Participante {
+import java.io.Serializable;
 
-	 private int idParticipante;
-	    private String nombre;
-	    private int puntaje;
+public class Participante implements Serializable {
 
-	    public Participante(int idParticipante, String nombre) {
-	        this.idParticipante = idParticipante;
-	        this.nombre = nombre;
-	        puntaje = 0;
-	    }
-	    
-	    public int getIdParticipante() {
-	        return idParticipante;
-	    }
+	private int idParticipante;
+	private String nombre;
+	private int puntaje;
 
-	    public String getNombre() {
-	        return nombre;
-	    }
+	public Participante(int idParticipante, String nombre) {
+		this.idParticipante = idParticipante;
+		this.nombre = nombre;
+		puntaje = 0;
+	}
 
-	    public int getPuntaje() {
-	        return puntaje;
-	    }
-	    
-	    public void setPuntaje(int puntaje) {
-	    	this.puntaje = puntaje;
-	    }
-	
+	public int getIdParticipante() {
+		return idParticipante;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+
+	public void setPuntaje(int puntaje) {
+		this.puntaje = puntaje;
+	}
+
 }

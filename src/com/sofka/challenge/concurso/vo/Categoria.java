@@ -48,7 +48,7 @@ public class Categoria {
         }
     }
 
-    public Pregunta elegirPreguntaAlAzar(){
+	public Pregunta elegirPreguntaAlAzar(){
         int numAleatorio = (int) Math.floor(Math.random()* preguntas.size());
         return preguntas.get(numAleatorio);
     }

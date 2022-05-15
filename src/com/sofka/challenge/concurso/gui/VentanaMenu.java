@@ -26,31 +26,32 @@ public class VentanaMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
-		
+
 		JButton btnJugar = new JButton("JUGAR");
 		btnJugar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				try {
 					int pin = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su PIN de jugador"));
-					if(juego.encontrarParticipante(pin) != null) {
+					if (juego.encontrarParticipante(pin) != null) {
 						VentanaJuego ventanaJuego = new VentanaJuego(juego, pin);
 						ventanaJuego.setVisible(true);
 						setVisible(false);
-					}else {
+					} else {
 						juego.mostrarMensaje("No estás registrado, por favor registrate primero");
 					}
-					
-				}catch(NumberFormatException ex) {
+
+				} catch (NumberFormatException ex) {
 					juego.mostrarMensaje("El pin debe ser un numero entero");
 				}
-				
+
 			}
 		});
 		btnJugar.setBounds(123, 95, 156, 23);
 		contentPane.add(btnJugar);
-		
+
 		JButton btnRegistro = new JButton("REGISTRARSE");
 		btnRegistro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -61,10 +62,11 @@ public class VentanaMenu extends JFrame {
 		});
 		btnRegistro.setBounds(123, 43, 156, 23);
 		contentPane.add(btnRegistro);
-		
+
 		JButton btnSalir = new JButton("SALIR DEL JUEGO");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				juego.guardarArchivos();
 				System.exit(0);
 			}
 		});

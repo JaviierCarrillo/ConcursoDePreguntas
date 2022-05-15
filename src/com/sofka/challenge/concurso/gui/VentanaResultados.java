@@ -108,7 +108,10 @@ public class VentanaResultados extends JFrame {
 	 * metodo que llema la tabla con los participantes registrados
 	 */
 	public void llenarTabla() {
+		juego.ordenarParticipantes();
 		ArrayList<Participante> participantes = juego.getParticipantes();
+		model.setRowCount(0);
+		model.setColumnCount(2);
 		for (Participante participante : participantes) {
 			Object[] fila = new Object[2];
 			fila[0] = participante.getNombre();

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import javax.swing.JOptionPane;
 
@@ -37,7 +39,9 @@ public class Juego {
 	}
 
 	/**
-	 * metodo que busca a un participante en la lista a través de su pin de seguridad
+	 * metodo que busca a un participante en la lista a través de su pin de
+	 * seguridad
+	 * 
 	 * @param id es el pin de seguridad
 	 * @return
 	 */
@@ -80,17 +84,29 @@ public class Juego {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * metodo que muestra un mensaje en pantalla 
+	 * metodo que muestra un mensaje en pantalla
+	 * 
 	 * @param mensaje que se quiere mostrar
 	 */
 	public void mostrarMensaje(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje);
 	}
-	
 
-	//Getters and setters
+	/**
+	 * metodo que ordena a los participantes de mayor a menor según su puntaje
+	 */
+	public void ordenarParticipantes() {
+		Collections.sort(participantes, new Comparator<Participante>() {
+			@Override
+			public int compare(Participante p1, Participante p2) {
+				return Integer.valueOf(p2.getPuntaje()).compareTo(Integer.valueOf(p1.getPuntaje()));
+			}
+		});
+	}
+
+	// Getters and setters
 	public ArrayList<Participante> getParticipantes() {
 		return participantes;
 	}

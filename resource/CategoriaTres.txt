@@ -39,11 +39,11 @@ Nilo
 Misisipi
 Yangtsé
 ¿Qué país tiene forma de bota?
-Francia
 Italia
+Francia
 España
 Inglaterra
-¿Cuántos lados tiene un hexágono? 
+¿Cuántos lados tiene un hexágono?
 6
 3
 5

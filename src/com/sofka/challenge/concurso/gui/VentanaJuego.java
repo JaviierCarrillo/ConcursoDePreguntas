@@ -51,7 +51,7 @@ public class VentanaJuego extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
-		// setUndecorated(true);
+		setUndecorated(true);
 		contentPane.setLayout(null);
 
 		lblCategoria = new JLabel("Categoria: " + categoria);
